@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="PVstyle.css">
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    
 </head>
 <body>
   
@@ -39,9 +41,22 @@
   <span>Storage:-</span> The shortened URL and its associated long URL are stored in the URL shortener's database. This enables the service to redirect users to the original webpage when they access the shortened URL.</p>
   
   
-  <div class="d">
-  <a href="https://lksfy.com/HtPrL">Download Now</a>
-  </div>
+  <br>
+  
+    <div class="link-copy">
+  
+      <h5 id="h5" style="color: #0066ff; font-size: 25px;">↓ copy this link and open in a new tab ↓</h5>
+  
+      <span id="span">
+  
+        <h6 id="p1">https://lksfy.com/HtPrL</h6>
+  
+        <button id="copyButton" onclick="copyToClipboard('#p1'); changeColor();">Copy</button>
+  
+      </span>
+  
+    </div>
+    <br>
 
   <p><span>Redirection:</span> When someone clicks on the shortened URL, they are redirected to the original, longer URL. This redirection is performed seamlessly and quickly, allowing users to access the intended content without even realizing the presence of the shortened link.
   <br>
@@ -58,6 +73,25 @@
   URL shorteners are used widely in digital marketing, social media sharing, and any context where long and unwieldy URLs are problematic. They make links more user-friendly and aesthetically pleasing, improving the overall user experience. While many URL shorteners are free, some premium services offer additional features, such as advanced analytics, link customization, and enhanced security. In essence, URL shorteners simplify the sharing of web links, making them easier to manage and share across various platforms</p>
     
   </div>
+  
+  
+    <script>
+  
+   function copyToClipboard(element) {
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val($(element).text()).select();
+      document.execCommand("copy");
+      $temp.remove();
+    }
+    
+    function changeColor() {
+        document.querySelector('#p1').style.color = '#ff6600';
+        document.querySelector('#copyButton').style.background = '#ff6600';
+        
+        document.querySelector('#h5').style.color = '#ff6600';
+    }
+  </script>
   
 </body>
 </html>
